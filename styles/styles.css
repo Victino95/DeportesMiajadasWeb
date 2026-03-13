@@ -1,11 +1,15 @@
-/* Variables de color - Cámbialas aquí para ver el cambio en toda la web */
+/* =========================================
+   VARIABLES Y CONFIGURACIÓN
+   ========================================= */
 :root {
-    --color-primario: #003459;    /* Azul marino profundo */
-    --color-secundario: #007ea7;  /* Azul agua */
-    --color-acento: #ff6b35;      /* Naranja (como un flotador o señuelo) */
-    --color-fondo: #f8f9fa;       /* Gris muy claro */
-    --color-texto: #333333;
-    --fuente-principal: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --primario: #003459;    /* Azul Marino */
+    --secundario: #007ea7;  /* Azul Agua */
+    --acento: #ff6b35;      /* Naranja Coral */
+    --fondo: #ffffff;
+    --gris-claro: #f4f7f6;
+    --texto: #2d3436;
+    --blanco: #ffffff;
+    --transicion: all 0.3s ease;
 }
 
 * {
@@ -15,49 +19,59 @@
 }
 
 body {
-    font-family: var(--fuente-principal);
+    font-family: 'Inter', sans-serif, Arial;
+    color: var(--texto);
     line-height: 1.6;
-    color: var(--color-texto);
-    background-color: var(--color-fondo);
+    background-color: var(--fondo);
 }
 
-/* Navegación */
+/* =========================================
+   NAVEGACIÓN (Común para ambas páginas)
+   ========================================= */
 nav {
-    background-color: white;
-    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 1rem 10%;
+    background: white;
+    position: relative; /* Para que el desplegable se posicione bien */
+    border-bottom: 1px solid #eee;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-primario);
-    text-decoration: none;
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--color-texto);
-    margin-left: 20px;
-    font-weight: 500;
-    transition: color 0.3s;
+    color: var(--texto);
+    margin-left: 2rem;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--color-secundario);
+.logo {
+    display: block;
+    width: 200px;         /* Ajusta el ancho de tu logo */
+    height: 160px;         /* Ajusta el alto de tu logo */
+    background-image: url('../images/logo.png'); /* La ruta es desde el CSS a la imagen */
+    background-size: contain;    /* Hace que la imagen quepa sin deformarse */
+    background-repeat: no-repeat;
+    background-position: left center;
+    text-indent: -9999px; /* Esconde el texto para que solo se vea la imagen */
+    overflow: hidden;
 }
 
-/* Hero Section (Cabecera) */
+/* =========================================
+   INDEX: HERO SECTION
+   ========================================= */
 .hero {
-    height: 70vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('../images/hero-pesca.jpg') center/cover no-repeat;
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1544551763-47a0159c9212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,87 +84,193 @@ nav {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    letter-spacing: -1px;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    max-width: 600px;
 }
 
-/* Botones */
+/* =========================================
+   BOTONES
+   ========================================= */
 .btn {
     padding: 12px 30px;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: transform 0.2s, background 0.3s;
     display: inline-block;
+    transition: var(--transicion);
 }
 
-.btn-principal {
-    background-color: var(--color-acento);
+.btn-principal, .btn-send {
+    background-color: var(--acento);
     color: white;
+    border: none;
+    cursor: pointer;
 }
 
-.btn-principal:hover {
-    transform: translateY(-3px);
+.btn-principal:hover, .btn-send:hover {
     background-color: #e85a2a;
+    transform: translateY(-2px);
 }
 
-/* Secciones de contenido */
-section {
+/* =========================================
+   INDEX: SERVICIOS (Grid y Cards)
+   ========================================= */
+section, .container {
     padding: 80px 10%;
 }
 
-.section-title {
+.section-title, .section-header {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.section-title h2 {
+.section-title h2, .section-header h1 {
     font-size: 2.5rem;
-    color: var(--color-primario);
+    color: var(--primario);
 }
 
-/* Cuadrícula de servicios/características */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 15px;
     text-align: center;
-    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transicion);
 }
 
 .card:hover {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
 }
 
 .card i {
-    font-size: 2.5rem;
-    color: var(--color-secundario);
-    margin-bottom: 15px;
+    font-size: 3rem;
+    color: var(--secundario);
+    margin-bottom: 20px;
 }
 
-/* Footer */
+/* =========================================
+   CONTACTO: DISEÑO DE PÁGINA
+   ========================================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+}
+
+.info-card {
+    background: var(--gris-claro);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.info-item {
+    margin-bottom: 30px;
+}
+
+.info-item h3 {
+    color: var(--secundario);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    font-weight: 600;
+    color: var(--primario);
+}
+
+/* FORMULARIO */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secundario);
+}
+
+.btn-send {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
 footer {
-    background-color: var(--color-primario);
+    background: var(--primario);
     color: white;
-    padding: 40px 10%;
     text-align: center;
+    padding: 40px 10%;
+    margin-top: 50px;
 }
 
-/* Responsive */
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+#menu-check {
+    display: none;
+}
+
+/* Estilo del botón hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto en PC */
+    font-size: 1.8rem;
+    color: var(--primario);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* --- RESPONSIVE (MÓVIL) --- */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    nav { flex-direction: column; gap: 15px; }
-    .nav-links a { margin: 0 10px; }
+    .menu-toggle {
+        display: block; /* Aparece en móvil */
+    }
+
+    .nav-links {
+        display: none; /* Escondido por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Justo debajo del nav */
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .nav-links a {
+        margin: 10px 0 !important;
+        width: 100%;
+    }
+
+    /* LA MAGIA: Si el checkbox está marcado, muestra el menú */
+    #menu-check:checked ~ .nav-links {
+        display: flex;
+    }
 }
