@@ -67,14 +67,15 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 Tienda de Pesca Profesional. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Deportes Miajadas. Calle San Juan Nº1, Miajadas.</p>
+        <p>Diseñado para el éxito en el agua.</p>
     </footer>
 
     <!-- Enlazamos el JavaScript que crearemos para Google Apps Script -->
     <script src="../forms/contact-form.js"></script>
 </body>
 <script>
-    fetch('nav.html') // O la ruta donde esté tu nav.html
+    fetch('/nav.html') // O la ruta donde esté tu nav.html
         .then(response => response.text())
         .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
