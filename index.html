@@ -4,19 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deportes Miajadas</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="logo">🎣 PESCA PROFESIONAL</a>
-        <div class="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="views/contacto.html">Contacto</a>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <header class="hero" id="inicio">
         <h1>Pasión por la Pesca</h1>
@@ -55,4 +48,11 @@
     </footer>
 
 </body>
+<script>
+    fetch('/views/nav.html') // O la ruta donde esté tu nav.html
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+        });
+</script>
 </html>
