@@ -74,7 +74,7 @@
     <script src="../forms/contact-form.js"></script>
 </body>
 <script>
-    fetch('views/nav.html') // O la ruta donde esté tu nav.html
+    fetch('nav.html') // O la ruta donde esté tu nav.html
         .then(response => response.text())
         .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
