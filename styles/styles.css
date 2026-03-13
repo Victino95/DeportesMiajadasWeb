@@ -2,8 +2,8 @@
    VARIABLES Y CONFIGURACIÓN
    ========================================= */
 :root {
-    --primario: #003459;    /* Azul Marino */
-    --secundario: #007ea7;  /* Azul Agua */
+    --primario: #d08167;    /* Azul Marino */
+    --secundario: #7b9b91;  /* Azul Agua */
     --acento: #ff6b35;      /* Naranja Coral */
     --fondo: #ffffff;
     --gris-claro: #f4f7f6;
@@ -54,7 +54,7 @@ nav {
 .logo {
     display: block;
     width: 200px;         /* Ajusta el ancho de tu logo */
-    height: 160px;         /* Ajusta el alto de tu logo */
+    height: 120px;         /* Ajusta el alto de tu logo */
     background-image: url('../images/logo.png'); /* La ruta es desde el CSS a la imagen */
     background-size: contain;    /* Hace que la imagen quepa sin deformarse */
     background-repeat: no-repeat;
@@ -68,8 +68,7 @@ nav {
    ========================================= */
 .hero {
     height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('https://images.unsplash.com/photo-1544551763-47a0159c9212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
     background-size: cover;
     background-position: center;
     display: flex;
@@ -167,25 +166,35 @@ section, .container {
 }
 
 .info-card {
+    display: flex;          /* Activa el modo fila */
+    justify-content: space-around; /* Distribuye el espacio de forma equitativa */
+    align-items: flex-start; /* Alinea los textos arriba */
+    gap: 20px;              /* Espacio de separación entre columnas */
     background: var(--gris-claro);
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
+    margin-top: 30px;
+    text-align: center;     /* Centra el texto de cada bloque */
 }
 
+/* Cada bloque individual (Ubicación, WhatsApp, Horario) */
 .info-item {
-    margin-bottom: 30px;
+    flex: 1;                /* Hace que todos los bloques midan lo mismo */
+    min-width: 200px;       /* Evita que se aplasten demasiado */
 }
 
 .info-item h3 {
     color: var(--secundario);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .info-item p {
     font-weight: 600;
     color: var(--primario);
+    font-size: 0.95rem;
 }
 
 /* FORMULARIO */
