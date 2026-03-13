@@ -11,7 +11,23 @@
 </head>
 <body>
 
-    <div id="nav-placeholder"></div>
+    <nav>
+    <!-- Logo: Subimos un nivel para que el CSS encuentre la imagen -->
+    <a href="../index.html" class="logo">Deportes Miajadas</a>
+
+    <!-- Checkbox hack -->
+    <input type="checkbox" id="menu-check">
+    <label for="menu-check" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </label>
+
+    <!-- Enlaces: Usamos ../ para volver atrás -->
+    <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="../index.html#servicios">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+</nav>
 
     <main class="container">
         <header class="section-header">
