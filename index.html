@@ -13,7 +13,7 @@
 
     <header class="hero" id="inicio">
         <h1>Pasión por la Pesca</h1>
-        <p>Equípate con los mejores materiales y el cebo más fresco de la costa.</p>
+        <p>Equípate con los mejores materiales y el cebo más fresco.</p>
         <a href="https://wa.me/tunumerowhatsapp" class="btn btn-principal">Contactar ahora</a>
     </header>
 
@@ -49,7 +49,7 @@
 
 </body>
 <script>
-    fetch('/views/nav.html') // O la ruta donde esté tu nav.html
+    fetch('views/nav.html') // O la ruta donde esté tu nav.html
         .then(response => response.text())
         .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
